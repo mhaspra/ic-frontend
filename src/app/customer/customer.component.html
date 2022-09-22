@@ -1,0 +1,4 @@
+<div *ngIf="customer" class="customer">
+  <div>Kunde: {{customer.name}}</div>
+  <app-contracts [contracts]="customer.contracts"></app-contracts>
+</div>

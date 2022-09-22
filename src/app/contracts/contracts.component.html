@@ -1,0 +1,7 @@
+<div *ngIf="contracts">
+  <ul>
+    <li *ngFor="let contract of contracts">
+      <app-contract [contract]="contract"></app-contract>
+    </li>
+  </ul>
+</div>

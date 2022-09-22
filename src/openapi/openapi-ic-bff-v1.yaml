@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  title: InsuranceCase
+  description: BFF for InsuranceCase
+  version: 0.0.1
+paths:
+  /v1/overview:
+    get:
+      summary: Overview of customers and their contracts
+      tags:
+        - Overview
+      operationId: Overview
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Overview'
+        404:
+          description: Not Found
+        500:
+          description: Internal Server Error
+        504:
+          description: Upstream Timeout
+components:
+  schemas:
+    Overview:
+      type: object
+      properties:
+        customers:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerWithContracts'
+    CustomerWithContracts:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        contracts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Contract'
+    Contract:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
