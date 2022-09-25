@@ -5,7 +5,7 @@ import {Overview} from "./api/v1";
 
 @Injectable({providedIn: 'root'})
 export class OverviewService {
-  private apiUrl = 'http://localhost:30001/api/v1/overview';
+  private apiUrl = 'http://localhost:30496/api/v1/overview';
 
   constructor(
     private http: HttpClient) { }
